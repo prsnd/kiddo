@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <head>
+    <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <container>
+    <div class="container">
         <div class="row">
             <div class="col">
-                <img src="img/wc.JPG" class="w-100" style="filter:grayscale(100%);" />
-            </div>
-            <div class="col">
                 <img src="img/wc.JPG" class="w-100" />
             </div>
             <div class="col">
-                <img src="img/wc.JPG" class="w-100" />
+                <img src="img/mad.JPG" class="w-100" />
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <img src="img/wc.JPG" class="w-100" /> 
+                <img src="img/toej.JPG" class="w-100" />
             </div>
             <div class="col">
-                <img src="img/wc.JPG" class="w-100" />
-            </div>
-            <div class="col">
-                <img src="img/wc.JPG" class="w-100" />
+                <img src="img/tand.JPG" class="w-100" /> 
             </div>
         </div>
-    </container>
+        <div class="row">
+            <div class="col">
+                <img src="img/jakke.JPG" class="w-100" />
+            </div>
+            <div class="col">
+                <img src="img/sko.JPG" class="w-100" />
+            </div>
+        </div>
+    </div>
 
-</script>
-$(document).onload(function(){
-    console.log('ready')
-    $("img").click(function() {
-        console.log('triggered')
-    });
+<script>
+$("img").click(function() {
+    $(this).addClass('done')
 });
 </script>
 
