@@ -6,37 +6,54 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <img src="img/wc.JPG" class="w-100" />
+    <div class="container w-50">
+            <div class="d-flex">
+                <img src="img/wc.JPG" />
+                <img src="img/mad.JPG"/>
             </div>
-            <div class="col">
-                <img src="img/mad.JPG" class="w-100" />
+            <div class="d-flex">
+                <img src="img/toej.JPG"  />
+                <img src="img/tand.JPG" /> 
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <img src="img/toej.JPG" class="w-100" />
-            </div>
-            <div class="col">
-                <img src="img/tand.JPG" class="w-100" /> 
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <img src="img/jakke.JPG" class="w-100" />
-            </div>
-            <div class="col">
-                <img src="img/sko.JPG" class="w-100" />
+            <div class="d-flex">
+                <img src="img/jakke.JPG"/>
+                <img src="img/sko.JPG"/>
             </div>
         </div>
     </div>
-
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button> -->
+    <div class="modal " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Godt gået Birk! Afsted til børnehaven!</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="img/spiderman-flying.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      
 <script>
+
+let videoTrigger = 0;
+
 $("img").click(function() {
-    $(this).addClass('done')
+    $(this).addClass('done');
+    videoTrigger = videoTrigger+1;
+    if(videoTrigger == 6){
+        triggerVideo();
+    }
 });
+
+function triggerVideo(){
+    $('#exampleModal').show()
+};
+
 </script>
 
 </body>

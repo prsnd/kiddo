@@ -1,17 +1,9 @@
-.container {
-    height: 100%;
-}
-
-.row {
-    margin: 0px;
-}
-
 body {
-    background-image: url('img/batman.jpg');
+    background-image: url('img/spiderman.jpg');
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    /* background-size: cover; */
 }
 
 img.done {
@@ -34,4 +26,5 @@ img.done {
 img {
     cursor: pointer;
     padding: 1px;
+    width: 100%;
 }
