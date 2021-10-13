@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container w-50">
             <div class="d-flex">
-                <img class="elem" src="img/wc.JPG" />
-                <img src="img/mad.JPG"/>
+                <img class="task" src="img/wc.JPG" />
+                <img class="task" src="img/mad.JPG"/>
             </div>
             <div class="d-flex">
-                <img src="img/toej.JPG"  />
-                <img src="img/tand.JPG" /> 
+                <img class="task" src="img/toej.JPG"  />
+                <img class="task" src="img/tand.JPG" /> 
             </div>
             <div class="d-flex">
-                <img src="img/jakke.JPG"/>
-                <img src="img/sko.JPG"/>
+                <img class="task" src="img/jakke.JPG"/>
+                <img class="task" src="img/sko.JPG"/>
             </div>
         </div>
     </div>
@@ -42,38 +41,27 @@
 
 let superheros = ['batman.jpg', 'batwoman.png', 'captain_america.webp', 'lynet.png', 'spiderman.jpg', 'superman.png', 'WonderWoman.png'];
 
-const imgElement = document.getElementsByTagName('img');
-
-let videoTrigger = 0;
-
+const imgElement = document.getElementsByClassName('task');
+let completedTasks = document.getElementsByClassName('done');
 
 for (let i = 0; i < imgElement.length; i++) {
   imgElement[i].onclick = clickFunction;
 }
 
 function clickFunction() {
-  console.log('Thank you');
+  this.classList.add('done');
+  if(imgElement.length == completedTasks.length){
+    console.log('trigger noget done!')
+  }
 };
 
+//set random background image from superheros array
 window.onload = function() {
   document.body.setAttribute('style', 'background-image: url("img/' + superheros[randomNumber(0, superheros.length-1)] + '")');
 };
 
 function randomNumber(min, max) { 
   return Math.floor(Math.random() * (max - min) + min);
-};
-
-$("img").click(function() {
-    $(this).addClass('done');
-    videoTrigger = videoTrigger+1;
-    // if(videoTrigger == 6){
-    //     triggerVideo();
-    // }
-});
-
-
-function triggerVideo(){
-    $('#exampleModal').show()
 };
 
 </script>
