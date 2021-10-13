@@ -8,7 +8,7 @@
 <body>
     <div class="container w-50">
             <div class="d-flex">
-                <img src="img/wc.JPG" />
+                <img class="elem" src="img/wc.JPG" />
                 <img src="img/mad.JPG"/>
             </div>
             <div class="d-flex">
@@ -42,16 +42,26 @@
 
 let superheros = ['batman.jpg', 'batwoman.png', 'captain_america.webp', 'lynet.png', 'spiderman.jpg', 'superman.png', 'WonderWoman.png'];
 
+const imgElement = document.getElementsByTagName('img');
+
 let videoTrigger = 0;
+
+
+for (let i = 0; i < imgElement.length; i++) {
+  imgElement[i].onclick = clickFunction;
+}
+
+function clickFunction() {
+  console.log('Thank you');
+};
 
 window.onload = function() {
   document.body.setAttribute('style', 'background-image: url("img/' + superheros[randomNumber(0, superheros.length-1)] + '")');
-  // console.log(randomNumber(0, superheros.length-1));
 };
 
 function randomNumber(min, max) { 
-    return Math.floor(Math.random() * (max - min) + min);
-} 
+  return Math.floor(Math.random() * (max - min) + min);
+};
 
 $("img").click(function() {
     $(this).addClass('done');
