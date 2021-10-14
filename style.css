@@ -6,6 +6,12 @@ body {
     /* background-size: cover; */
 }
 
+#background {
+    /* background-image: url('img/batwoman.png'); */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 img.done {
     /* filter:grayscale(100%); */
     /* filter:opacity(10%); */

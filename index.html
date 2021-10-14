@@ -3,9 +3,22 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <title>Birks morgen todo redning</title>
 </head>
 <body>
-    <div class="container w-50">
+    <div class="container">
+      <div class="d-flex">
+      <!-- <div id="timer">
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapsedTimer" role="button" aria-expanded="false" aria-controls="collapseExample">5 min</a>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          10 min
+        </button>
+        <div class="collapse" id="collapseExample">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/cQ8cd4aNG4Q?controls=0&amp;start=3305" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         <canvas id="timer" width="300" height="500"></canvas>
+        </div>
+      </div> -->
+      <div id="background" class="w-50 d-flex-rows">
             <div class="d-flex">
                 <img class="task" src="img/wc.JPG" />
                 <img class="task" src="img/mad.JPG"/>
@@ -18,12 +31,14 @@
                 <img class="task" src="img/jakke.JPG"/>
                 <img class="task" src="img/sko.JPG"/>
             </div>
+          </div>
+          </div>
         </div>
-    </div>
+      </div>
     <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Launch demo modal
     </button> -->
-    <div class="modal " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
@@ -31,7 +46,6 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <img src="img/spiderman-flying.jpg" />
             </div>
           </div>
         </div>
@@ -39,10 +53,13 @@
       
 <script>
 
-let superheros = ['batman.jpg', 'batwoman.png', 'captain_america.webp', 'lynet.png', 'spiderman.jpg', 'superman.png', 'WonderWoman.png'];
+const superheros = ['batman.jpg', 'batwoman.png', 'captain_america.webp', 'lynet.png', 'spiderman.jpg', 'superman.png', 'WonderWoman.png'];
+const dinosaurs = ['dino_t-rex.jpg'];
+
+let selectedBckgnd = superheros;
 
 const imgElement = document.getElementsByClassName('task');
-let completedTasks = document.getElementsByClassName('done');
+const completedTasks = document.getElementsByClassName('done');
 
 for (let i = 0; i < imgElement.length; i++) {
   imgElement[i].onclick = clickFunction;
@@ -51,19 +68,27 @@ for (let i = 0; i < imgElement.length; i++) {
 function clickFunction() {
   this.classList.add('done');
   if(imgElement.length == completedTasks.length){
-    console.log('trigger noget done!')
+    console.log(document.body.style.backgroundImage);
   }
 };
 
 //set random background image from superheros array
 window.onload = function() {
-  document.body.setAttribute('style', 'background-image: url("img/' + superheros[randomNumber(0, superheros.length-1)] + '")');
+  //document.body.setAttribute('style', 'background-image: url("img/' + superheros[randomNumber(0, superheros.length-1)] + '")');
+  document.getElementById('background').setAttribute('style', 'background-image: url("img/' + randomBackgnd(selectedBckgnd) + '")');
 };
 
-function randomNumber(min, max) { 
-  return Math.floor(Math.random() * (max - min) + min);
-};
+const randomBackgnd = backgndObj => backgndObj[randomNumber(0, backgndObj.length-1)];
+const randomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
+
+// circle timer
+// let height = 600;
+// const c = document.getElementById("timer");
+// const ctx = c.getContext("2d");
+// ctx.beginPath();
+// ctx.rect(20, 20, 150, height);
+// ctx.stroke(); 
 </script>
 
 </body>
