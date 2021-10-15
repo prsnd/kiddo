@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-    <div class="modal" id="fiveMinTimerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal" id="fiveMinTimerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
@@ -63,7 +63,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 <script>
 
 const superheros = ['batman.jpg', 'batwoman.png', 'captain_america.webp', 'lynet.png', 'spiderman.jpg', 'superman.png', 'WonderWoman.png'];
@@ -88,7 +88,7 @@ function clickFunction() {
 //set random background image from superheros array
 window.onload = function() {
   //document.body.setAttribute('style', 'background-image: url("img/' + superheros[randomNumber(0, superheros.length-1)] + '")');
-  document.getElementById('background').setAttribute('style', 'background-image: url("img/' + randomBackgnd(selectedBckgnd) + '")');
+  document.getElementById('background').setAttribute('style', 'background-image: url("img/' + randomBackgnd(dinosaurs) + '")');
 };
 
 const randomBackgnd = backgndObj => backgndObj[randomNumber(0, backgndObj.length-1)];
