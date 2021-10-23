@@ -8,31 +8,32 @@
     <title>Birks morgen todo redning</title>
 </head>
 <body>
-    <div class="container">
-      <div class="d-flex">
-      <div id="timer">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fiveMinTimerModal">5 min</button>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tenMinTimerModal">10 min</button>
-        <!-- <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsedTimer" aria-expanded="false" aria-controls="collapseExample">
-          10 min
-        </button>
-        <div class="collapse" id="collapsedTimer">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/cQ8cd4aNG4Q?controls=0&amp;start=3305" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-         <canvas id="timer" width="300" height="500"></canvas>
-        </div> -->
-      </div>
-      <div id="background" class="w-50 d-flex-rows">
-            <div class="d-flex">
-                <img class="task" src="img/wc.JPG" />
-                <img class="task" src="img/mad.JPG"/>
+    <div class="container v-100">
+       <div class="row">
+         <div class="h1 display-2 p-4">Birks morgen todo redning!</div>
+      <!--  <div class="col" id="timer">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fiveMinTimerModal">5 min</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tenMinTimerModal">10 min</button>
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsedTimer" aria-expanded="false" aria-controls="collapseExample">
+            10 min
+          </button>
+          <div class="collapse" id="collapsedTimer">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/cQ8cd4aNG4Q?controls=0&amp;start=3305" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <canvas id="timer" width="300" height="500"></canvas>
+          </div> -->
+        </div> 
+      <div id="background" class="col">
+            <div class="row">
+                <img class="task col px-0" src="img/wc.JPG" />
+                <img class="task col px-0" src="img/mad.JPG"/>
             </div>
-            <div class="d-flex">
-                <img class="task" src="img/toej.JPG"  />
-                <img class="task" src="img/tand.JPG" /> 
+            <div class="row">
+                <img class="task col px-0" src="img/toej.JPG"  />
+                <img class="task col px-0" src="img/tand.JPG" /> 
             </div>
-            <div class="d-flex">
-                <img class="task" src="img/jakke.JPG"/>
-                <img class="task" src="img/sko.JPG"/>
+            <div class="row">
+                <img class="task col px-0" src="img/jakke.JPG"/>
+                <img class="task col px-0" src="img/sko.JPG"/>
             </div>
           </div>
           </div>
@@ -67,9 +68,9 @@
 <script>
 
 const superheros = ['batman.jpg', 'batwoman.png', 'captain_america.webp', 'lynet.png', 'spiderman.jpg', 'superman.png', 'WonderWoman.png'];
-const dinosaurs = ['dino_t-rex.jpg'];
+const dinosaurs = ['dino_t-rex.jpg', 'pteranodon.jpeg', 'triceratops.png', 'brachiosaurus.jpeg'];
 
-let selectedBckgnd = dinosaurs;
+let selectedBckgnd = superheros;
 
 const imgElement = document.getElementsByClassName('task');
 const completedTasks = document.getElementsByClassName('done');
@@ -81,7 +82,7 @@ for (let i = 0; i < imgElement.length; i++) {
 function clickFunction() {
   this.classList.add('done');
   if(imgElement.length == completedTasks.length){
-    console.log(document.body.style.backgroundImage);
+    document.getElementById('background').classList.add('done');
   }
 };
 
@@ -94,14 +95,6 @@ window.onload = function() {
 const randomBackgnd = backgndObj => backgndObj[randomNumber(0, backgndObj.length-1)];
 const randomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
-
-// circle timer
-// let height = 600;
-// const c = document.getElementById("timer");
-// const ctx = c.getContext("2d");
-// ctx.beginPath();
-// ctx.rect(20, 20, 150, height);
-// ctx.stroke(); 
 </script>
 
 </body>

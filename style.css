@@ -1,36 +1,50 @@
 body {
-    /* background-image: url('img/batwoman.png'); */
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    /* background-size: cover; */
+  /* background-image: url('img/batwoman.png'); */
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#eee;
+  /* background-size: cover; */
 }
 
 #background {
-    /* background-image: url('img/batwoman.png'); */
-    background-position: center;
-    background-repeat: no-repeat;
+  /* background-image: url('img/batwoman.png'); */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@keyframes example {
+    0%   {background-position-y: 100px;}
+    25%  {background-position-y: -100px;}
+    50%  {background-position-x: 100px;
+        background-position-y: 100px;}
+    75%  {background-position-x: 800px;
+        background-position-y: -100px;}
+    100% {background-position-x: 1900px;}
+}
+
+#background.done {
+    animation: example 4s;
 }
 
 img.done {
-    /* filter:grayscale(100%); */
-    /* filter:opacity(10%); */
-    cursor: auto;
-    animation: fadeOut 2s;
-    opacity: 0;
+  cursor: auto;
+  animation: fadeOut 2s;
+  opacity: 0;
 }
 
 @keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-       opacity: 0;
-    }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 img {
-    cursor: pointer;
-    padding: 1px;
-    width: 100%;
+  cursor: pointer;
+  padding: 1px;
+  width: 100%;
 }
