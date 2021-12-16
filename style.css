@@ -1,14 +1,8 @@
 body {
-  /* background-image: url('img/batwoman.png'); */
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
   background-color:#eee;
-  /* background-size: cover; */
 }
 
 #background {
-  /* background-image: url('img/batwoman.png'); */
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

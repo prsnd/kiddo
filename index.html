@@ -10,9 +10,11 @@
     <title>Birks morgen todo redning</title>
 </head>
 <body>
-    <div class="container vw-100">
+    <div class="container h-100">
        <div class="row">
-         <div class="h1 display-2 p-4">Birks morgen todo redning!</div>
+         <div class="col-10 h1 display-2 p-4">Birks morgen todo redning!</div>
+         <div class="col-2 vw-25"><img src="" class="img-thumbnail"></div>
+
       <!--  <div class="col" id="timer">
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fiveMinTimerModal">5 min</button>
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tenMinTimerModal">10 min</button>
@@ -23,20 +25,22 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/cQ8cd4aNG4Q?controls=0&amp;start=3305" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <canvas id="timer" width="300" height="500"></canvas>
           </div> -->
-        </div> 
-      <div id="background" class="col">
+        </div>
+        <div class="row justify-content-center">
+        <div id="background" class="col-12 col-md-6">
             <div class="row">
-                <img class="task col px-0" src="img/wc.JPG" />
-                <img class="task col px-0" src="img/mad.JPG"/>
+                <img class="task col px-0 img-fluid" src="img/wc.JPG" />
+                <img class="task col px-0 img-fluid" src="img/mad.JPG"/>
             </div>
-            <div class="row">
-                <img class="task col px-0" src="img/toej.JPG"  />
-                <img class="task col px-0" src="img/tand.JPG" /> 
+            <div class="row justify-content-center">
+                <img class="task col px-0 img-fluid" src="img/toej.JPG"  />
+                <img class="task col px-0 img-fluid" src="img/tand.JPG" /> 
             </div>
-            <div class="row">
-                <img class="task col px-0" src="img/jakke.JPG"/>
-                <img class="task col px-0" src="img/sko.JPG"/>
+            <div class="row justify-content-center">
+                <img class="task col px-0 img-fluid" src="img/jakke.JPG"/>
+                <img class="task col px-0 img-fluid" src="img/sko.JPG"/>
             </div>
+          </div>
           </div>
           </div>
         </div>
@@ -72,7 +76,9 @@
 const superheros = ['batman.jpg', 'batwoman.png', 'captain_america.webp', 'lynet.png', 'spiderman.jpg', 'superman.png', 'WonderWoman.png'];
 const dinosaurs = ['dino_t-rex.jpg', 'pteranodon.jpeg', 'triceratops.png', 'brachiosaurus.jpeg'];
 
-let selectedBckgnd = superheros;
+const animals = ['drage.jpg']
+
+let selectedBckgnd = animals;
 
 const imgElement = document.getElementsByClassName('task');
 const completedTasks = document.getElementsByClassName('done');
@@ -91,7 +97,7 @@ function clickFunction() {
 //set random background image from superheros array
 window.onload = function() {
   //document.body.setAttribute('style', 'background-image: url("img/' + superheros[randomNumber(0, superheros.length-1)] + '")');
-  document.getElementById('background').setAttribute('style', 'background-image: url("img/' + randomBackgnd(dinosaurs) + '")');
+  document.getElementById('background').setAttribute('style', 'background-image: url("img/' + randomBackgnd(animals) + '")');
 };
 
 const randomBackgnd = backgndObj => backgndObj[randomNumber(0, backgndObj.length-1)];
